@@ -1,24 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Nav from './Components/Nav';
+import Home from './Components/Home';
+import Projects from './Components/Projects'
+import Types from './Components/Types'
+import { makeStyles } from '@material-ui/styles';
+import './style.css';
+
+const useStyles = makeStyles({
+  root: {
+    width: '1438px',
+    margin: '0 auto',
+    
+  }
+});
 
 function App() {
+  const classes = useStyles();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={classes.root}>
+      <Nav />
+      <Home />
+      <Projects />
+      <Types />
     </div>
   );
 }
